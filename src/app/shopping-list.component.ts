@@ -27,4 +27,13 @@ export class ShoppingListComponent implements OnInit {
     this.newItem = ''
   }
 
+  deleteItem(itemToDelete: string) {
+    console.log(itemToDelete)
+    this.list = this.list.filter(item => item !== itemToDelete)
+  }
+
+  noItems(): boolean {
+    return Boolean(this.list.length <= 0)
+  }
+
 }

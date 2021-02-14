@@ -1,15 +1,36 @@
 <div class="min-h-screen bg-gray-100">
-  <div class="container max-w-xl px-4 py-5 mx-auto">
-    <h1 class="text-3xl tracking-tight uppercase text-graywarm-700 font-extralight">Minhas compras</h1>
+  <div class="container max-w-xl min-h-screen px-4 py-5 mx-auto">
+    <h1 class="text-3xl tracking-tight uppercase text-graywarm-700 font-extralight">
+      Minhas compras
+    </h1>
 
     <div class="mt-5">
-      <label class="inline-block mb-2 text-xs text-graywarm-600 " for="newItem">Você deve comprar...</label>
-      <input id="newItem" [(ngModel)]="newItem" class="min-w-full text-sm border-gray-400 rounded-md focus:border-blue-600" type="text">
-      <button type="submit" (click)="addNewItem()" class="min-w-full px-1 py-3 mt-2 text-sm text-white bg-blue-600 rounded-md ">Adicionar item</button>
+      <label class="inline-block mb-2 text-xs text-graywarm-600" for="newItem">Você deve comprar...</label>
+      <input id="newItem" [(ngModel)]="newItem"
+        class="min-w-full text-sm border-gray-400 rounded-md focus:border-blue-600" type="text" />
+      <button type="submit" (click)="addNewItem()"
+        class="min-w-full px-1 py-3 mt-2 text-sm text-white bg-blue-600 rounded-md">
+        Adicionar item
+      </button>
     </div>
 
-    <ul class="mt-6 space-y-2">
-      <li class="border-b border-blue-200 text-graywarm-600" *ngFor="let item of list">Comprar {{item}}</li>
+    <div class="h-full min-h-full mt-4" *ngIf="noItems()">
+      <svg class="text-graywarm-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+      </svg>
+    </div>
+
+    <ul *ngIf="!noItems()" class="mt-6 space-y-2">
+      <li class="flex justify-between border-b border-blue-200 text-graywarm-600" *ngFor="let item of list">
+        Comprar {{ item }}
+        <button (click)="deleteItem(item)">
+          <svg class="h-8 text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+          </svg>
+        </button>
+      </li>
     </ul>
   </div>
 </div>
