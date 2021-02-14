@@ -3,8 +3,9 @@
     <h1 class="text-3xl tracking-tight uppercase text-graywarm-700 font-extralight">Minhas compras</h1>
 
     <div class="mt-5">
-      <input [(ngModel)]="newItem" class="min-w-full text-sm border-gray-400 rounded-md focus:border-blue-600" type="text">
-      <button (click)="addNewItem()" class="min-w-full px-1 py-3 mt-2 text-sm bg-blue-500 rounded-md text-blue-50">Adicionar item</button>
+      <label class="block mb-2 text-xs" for="new-item">Você deve comprar...</label>
+      <input id="new-item" [(ngModel)]="newItem" class="min-w-full text-sm border-gray-400 rounded-md focus:border-blue-600" type="text">
+      <button (click)="addNewItem()" class="min-w-full px-1 py-3 mt-2 text-sm text-white bg-blue-600 rounded-md">Adicionar item</button>
     </div>
 
     <ul class="mt-6 space-y-2">
