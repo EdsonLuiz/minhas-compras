@@ -1,7 +1,10 @@
 const colors = require('tailwindcss/colors')
 
+const isProd = process.env.NODE_ENV === 'production'
+
 module.exports = {
   purge: {
+    enabled: isProd,
     content: [
       './src/**/*.{html,ts}',
     ]
