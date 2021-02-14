@@ -1,0 +1,14 @@
+<div class="min-h-screen bg-gray-100">
+  <div class="container max-w-xl px-4 py-5 mx-auto">
+    <h1 class="text-3xl tracking-tight uppercase text-graywarm-700 font-extralight">Minhas compras</h1>
+
+    <div class="mt-5">
+      <input [(ngModel)]="newItem" class="min-w-full text-sm border-gray-400 rounded-md focus:border-blue-600" type="text">
+      <button (click)="addNewItem()" class="min-w-full px-1 py-3 mt-2 text-sm bg-blue-500 rounded-md text-blue-50">Adicionar item</button>
+    </div>
+
+    <ul class="mt-6 space-y-2">
+      <li class="border-b border-blue-200 text-graywarm-600" *ngFor="let item of list">Comprar {{item}}</li>
+    </ul>
+  </div>
+</div>
