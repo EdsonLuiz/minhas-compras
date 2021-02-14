@@ -70,11 +70,12 @@
                 }
               ],
               "optimization": { 
+                "scripts": true,
                 "styles": {
                   "minify": true,
-                  "inlineCritical": true,
-                  "inline": true
-                }
+                  "inlineCritical": true
+                },
+                "fonts": true
               },
               "outputHashing": "all",
               "sourceMap": false,
